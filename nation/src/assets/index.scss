@@ -1,0 +1,30 @@
+$color-bg: white !default;
+$color-border : #dce3f3 !default;
+$color-text:#464c5b !default;
+$color-icon : #a6b2d1 !default;
+$color-line: #dce3f3 !default;
+$color-disabled-bg : #fbfcfe !default;
+$color-disabled-text: #c9cace;
+$color-info: #b1b9c3 !default;
+
+//主色调
+$color-primary : #43a3fb !default;
+$color-primary-hover: #3b93ff !default;
+$color-link: #257cef !default;
+$color-select-focus : #419ff8 !default;
+
+//辅助绿色
+$color-success : #5cc62c !default;
+
+$color-danger : #ff6c60 !default;
+
+//在线、离线、未知三种状态颜色
+$color-online : #1fcf6a !default;
+$color-outline : $color-danger;
+$color-unknow : #9ea8b4 !default;
+$color-light : #f4f7fc;
+
+@import './home';
+@import './table';
+@import './checkbox';
+@import './pagination';

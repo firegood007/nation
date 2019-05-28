@@ -1,0 +1,175 @@
+.el-pagination.nova-pagination__pager {
+    padding-top: 0;
+    padding-bottom: 0;
+  
+    .btn-prev,
+    .btn-next,
+    .el-pager li {
+      height: 32px;
+      padding: 5px;
+      border: 1px solid #dce3f3;
+      border-radius: 4px;
+      background-color: #fff;
+      margin-left: 4px;
+      min-width: 32px;
+      line-height: 20px;
+      font-weight: normal;
+      color: $color-text;
+      font-size: 12px;
+  
+      &:hover {
+        color: #43a3fb;
+      }
+    }
+  
+    .btn-prev {
+      margin-left: 0;
+    }
+  
+    .el-pager li.active {
+      border-color: #43a3fb;
+      background-color: #43a3fb;
+      color: #fff;
+      font-weight: bold;
+    }
+  
+    .btn-prev,
+    .btn-next,
+    .more {
+      i {
+        position: relative;
+        top: 1px;
+      }
+  
+      &::before {
+        position: relative;
+        top: -3px;
+      }
+    }
+  
+    .btn-prev,
+    .btn-next {
+      &.disabled {
+        color: #ccc;
+      }
+    }
+  }
+  
+  
+  
+  .nova-pagination {
+    .nova-pagination__jump,
+    .nova-pagination__pages,
+    .nova-pagination__jump .jump-label,
+    .nova-pagination__jump .jump-input {
+      display: inline-block;
+      vertical-align: middle;
+    }
+  
+    .nova-pagination__jump {
+      margin-right: 7px;
+    }
+  
+    .nova-pagination__jump .jump-input {
+      width: 50px;
+      height: 32px;
+      line-height: 30px;
+      padding: 0 5px;
+      border: 1px solid #dce3f3;
+      border-radius: 4px;
+      margin: 0 3px 0 5px;
+      outline: none;
+    }
+  
+    .nova-pagination__info {
+      line-height: 20px;
+      padding: 6px 0;
+    }
+  
+    .el-pagination {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+  
+  
+  //分页
+  .nova-page-more {
+    position: relative;
+    padding: 20px 0;
+    text-align: center;
+    user-select: none;
+  
+    &::before,&::after {
+      content: '';
+      width: 22%;
+      top: 38px;
+      position: absolute;
+      border-top: 1px solid #f4f7fc;
+    }
+  
+    &::before {
+      left: 0;
+    }
+  
+    &::after {
+      right: 0;
+    }
+  
+    .nova-page-more__bar {
+      padding: 10px;
+      width: 49%;
+      background-color: #f4f7fc;
+      display: inline-block;
+      font-size: 16px;
+      color: #999;
+      cursor: pointer;
+      transition: all .2s;
+      border: none;
+      appearance: none;
+      outline: none;
+  
+      &:hover {
+        background-color: #dce3f3;
+        color: #657180;
+      }
+  
+      &:disabled {
+        background-color: $color-disabled-bg;
+        color: $color-disabled-text;
+        pointer-events: none;
+      }
+    }
+}
+.nova-left {
+    float: left!important;
+}
+.nova-right {
+    float: right!important;
+}
+.el-pager {
+    user-select: none;
+    list-style: none;
+    display: inline-block;
+    vertical-align: top;
+    font-size: 0;
+    padding: 0;
+    margin: 0;
+}
+.el-pager li {
+    padding: 0 4px;
+    background: #fff;
+    vertical-align: top;
+    display: inline-block;
+    font-size: 13px;
+    min-width: 35.5px;
+    height: 28px;
+    line-height: 28px;
+    cursor: pointer;
+    box-sizing: border-box;
+    text-align: center;
+    margin: 0;
+}
+.page-foot {
+    margin-top: 20px;
+}

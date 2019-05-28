@@ -1,0 +1,61 @@
+/******导入*****/
+import {
+    Alert,
+    Switch, 
+    Breadcrumb, 
+    BreadcrumbItem, 
+    Popover,
+    Dialog, 
+    Tooltip,
+    Button,
+    Pagination,
+    Checkbox,
+    Loading,
+    Select,
+    Option,
+    InputNumber,
+    ColorPicker,
+    Radio,
+    Slider,
+    Input,
+    ButtonGroup,
+    Tag,
+    DatePicker,
+    Scrollbar,
+    Dropdown,
+    DropdownMenu,
+    DropdownItem,
+    Progress
+  
+  } from 'element-ui'
+  
+  
+  /******导出*****/
+  export default {
+    Alert,
+    Switch,
+    Breadcrumb,
+    BreadcrumbItem,
+    Popover,
+    Dialog,
+    Tooltip,
+    Button,
+    Pagination,
+    Checkbox,
+    Loading,
+    Select,
+    Option,
+    InputNumber,
+    ColorPicker,
+    Radio,
+    Input,
+    Slider,
+    ButtonGroup,
+    Tag,
+    DatePicker,
+    Scrollbar,
+    Dropdown,
+    DropdownMenu,
+    DropdownItem,
+    Progress
+  }
