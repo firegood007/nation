@@ -54,8 +54,14 @@
     </div>
     <div class="home-cont">
       <div>
-        <input type="text" placeholder="请输入关键字搜索" class="search" />
-        <button class="btn search-btn">搜索</button>
+        <select  class="select" v-model="searchValue">
+          <option 
+          v-for="(item, index) in searchs" 
+          :key="index"
+          :value="item.value">{{item.name}}</option>
+        </select>
+        <input type="text" v-model="keyword" placeholder="请输入关键字搜索" class="search" />
+        <button class="btn search-btn" @click="searchList">搜索</button>
       </div>
       <div>
         <table class="nova-table">
@@ -99,13 +105,14 @@
               <td width="30">
                 <nova-checkbox v-model="item.check" @onChange="toggleCheck" :disabled="appAll"></nova-checkbox>
               </td>
-              <td @dblclick="changeId(item, index)" width=“600”>
+              <td width=“600”>
                 <input type="number"  
                 :class="['idtext', item.disabled? 'unactive' : 'active']" 
                 :disabled="item.disabled"
                 
                 :ref="'input'+index"
                 v-model="item.tid" />
+                <button class="btn-edit search-btn edit" v-show="item.disabled" @click="changeId(item, index)">编辑</button>
                 <button class="btn-edit search-btn" v-show="!item.disabled" @click="confirmId(item)">确定</button>
                 <button class="btn-edit search-btn" v-show="!item.disabled" @click="cancelId(item)">取消</button>
               </td>
@@ -160,8 +167,24 @@ export default {
 
       page: 1,
       total: 20,
-      size: 20
-
+      size: 20,
+      searchs: [
+        {
+          value: 0,
+          name: 'SN'
+        }, {
+          value: 1,
+          name: 'ID'
+        }, {
+          value: 2,
+          name: 'IP'
+        }, {
+          value: 3,
+          name: '版本'
+        }
+      ],
+      searchValue: 0,
+      keyword: '',
     }
   },
   methods: {
@@ -391,11 +414,8 @@ export default {
         }
       })
     },
-    getList() {
-      ListModel.getList({
-        page: this.page,
-        size: this.size
-      }).then(({body}) => {
+    getList(param) {
+      ListModel.getList(param).then(({body}) => {
         if (body.status == 0) {
           this.sucessM()
           let data = body.data
@@ -408,10 +428,23 @@ export default {
           this.errorM()
         }
       })
+    },
+    searchList() {
+     let sBox = ['sn', 'tid', 'ip', 'version']
+     this.page = 1
+     let param = {
+      page: this.page,
+      size: this.size,
+      [sBox[this.searchValue]]: this.keyword
+     }
+      this.getList(param)
     }
   },
   created() {
-    this.getList()
+    this.getList({
+      page: this.page,
+      size: this.size
+    })
     this.$on('curentChange', (page) => {
       onsole.log(123123)
     })
