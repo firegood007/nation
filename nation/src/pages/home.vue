@@ -437,6 +437,7 @@ export default {
 <style lang="scss">
   .idtext {
     width: 80px;
+    background:#fff;
   }
   .active {
     border: 1px solid #43a3fb;
