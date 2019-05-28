@@ -67,7 +67,7 @@
               <th width="">
                 <span>ID</span>
               </th>
-              <th width="">
+              <th width="100">
                 <span>IP</span>
               </th>
               <th width="">
@@ -76,13 +76,13 @@
               <th width="">
                 <span>命令执行状态</span>
               </th>
-              <th width="">
+              <th width="80">
                 <span>当前节目</span>
               </th>
               <th width="">
                 <span>节目下载进度</span>
               </th>
-              <th width="" @click="toggleSort">
+              <th width="100" @click="toggleSort">
                 <span>版本</span>
                 <span class="table-sort">
                     <i class="both" :class="{asc: sortType === 'asc', desc: sortType == 'desc'}"></i>
@@ -109,10 +109,10 @@
                 <button class="btn-edit search-btn" v-show="!item.disabled" @click="confirmId(item)">确定</button>
                 <button class="btn-edit search-btn" v-show="!item.disabled" @click="cancelId(item)">取消</button>
               </td>
-              <td>{{item.ip}}</td>
+              <td width="100">{{item.ip}}</td>
               <td>{{item.sn}}</td>
               <td>{{item.order}}: {{item.orderStatus}}</td>
-              <td>{{item.play_media_id!=''? item.play_media_id: '暂无'}}</td>
+              <td width="80">{{item.play_media_id!=''? item.play_media_id: '暂无'}}</td>
               <td>
                 <div v-if="item.media_download">
                   <span>完成：{{item.media_download.finish_count}}&nbsp;&nbsp;</span>
@@ -120,7 +120,7 @@
                 </div>
                 <div>完成率：{{item.download}}</div>
               </td>
-              <td>{{item.version}}</td>
+              <td width="100">{{item.version}}</td>
             </tr>
           </tbody>
         </table>
@@ -436,7 +436,7 @@ export default {
 
 <style lang="scss">
   .idtext {
-    width: 50px;
+    width: 80px;
   }
   .active {
     border: 1px solid #43a3fb;
