@@ -32,8 +32,14 @@ body {
       background: #fff;
       width: 100%;
       padding: 20px;
-      height: 150px;
+      height: 200px;
       border: 1px solid #ddd;
+      input {
+        outline: none;
+        &:focus {
+
+        }
+      }
     }
     .home-cont {
       background: #fff;
@@ -59,16 +65,33 @@ body {
        background-color:#3b93ff;
       }
     }
+    .btn-edit {
+      border-color: #43a3fb;
+      background-color: #43a3fb;
+      color: #fff;
+      font-size: 13px;
+      cursor: pointer;
+      padding: 4px 10px;
+      text-align:center;
+      outline: none;
+      border-style: none;
+      border-radius: 3px;
+      &:hover {
+       background-color:#3b93ff;
+      }
+    }
     .btn-ground {
       margin-top: 20px;
       width: 850px;
-     display: flex;
-     padding-left:20px;
+      padding-left:20px;
+      clear: both;
+      overflow: hidden;
     }
     .btn-ground_i {
-      flex: 1;
+      float: left;
+      width: 150px;
       &.last {
-        flex:1.5;
+        width: 200px;
       }
       input {
         height: 30px;
@@ -96,4 +119,5 @@ body {
         background-color: #88e0ec;
       }
     }
+
   }

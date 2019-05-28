@@ -26,7 +26,10 @@ export default {
             console.log("连接错误")
         },
         getMessage: function (msg) {
-            console.log(msg.data)
+            let data = JSON.parse(msg.data)
+            console.log(data)
+            if (!this.updateList) return
+            this.updateList(data)
         },
         send: function (params) {
             this.socket.send(params)
@@ -35,7 +38,7 @@ export default {
             console.log("socket已经关闭")
         },
         // 更新节目
-        updateProgram(type) {
+        updateBatchs(type) {
             this.send({
                 all: true,
                 code: type,

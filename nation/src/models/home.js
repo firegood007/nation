@@ -9,6 +9,9 @@ class ListModel extends Model {
   static getMediaInfo(param) {
     return this.Get('/api/players', param)
   }
+  static terminal(param) {
+  	return this.Post('/api/control/terminal', param)
+  }
 }
 
 export default ListModel
